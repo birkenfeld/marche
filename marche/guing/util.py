@@ -1,6 +1,6 @@
 #  -*- coding: utf-8 -*-
 # *****************************************************************************
-# MLZ server control daemon
+# Marche - A server control daemon
 # Copyright (c) 2015 by the authors, see LICENSE
 #
 # This program is free software; you can redistribute it and/or modify it under
