@@ -57,8 +57,10 @@ class Daemon(object):
         rootdir = path.join(path.dirname(__file__), '..')
         if path.exists(path.join(rootdir, '.git')):
             default_cfgdir = path.abspath(path.join(rootdir, 'etc'))
-        else:
-            default_cfgdir = '/etc/marche'  # pragma: no cover
+        elif os.name == 'nt':  # pragma: no cover
+            default_cfgdir = path.join(sys.prefix, 'etc', 'marche')
+        else:  # pragma: no cover
+            default_cfgdir = '/etc/marche'
 
         parser = argparse.ArgumentParser()
         parser.add_argument('--version', action='version',
